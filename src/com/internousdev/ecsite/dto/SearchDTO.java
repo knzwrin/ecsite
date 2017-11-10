@@ -5,7 +5,7 @@ public class SearchDTO {
 	private String itemName;
 	private String itemPrice;
 	private String itemImg;
-	private String itemDtail;
+	private String itemDetail;
 	private String categoryId;
 	private String categoryWord;
 	private String insert_date;
@@ -47,12 +47,12 @@ public class SearchDTO {
 	}
 
 
-	public String getItemDtail() {
-		return itemDtail;
+	public String getItemDetail() {
+		return itemDetail;
 	}
 
-	public void setItemDtail(String itemDtail) {
-		this.itemDtail = itemDtail;
+	public void setItemDetail(String itemDetail) {
+		this.itemDetail = itemDetail;
 	}
 
 

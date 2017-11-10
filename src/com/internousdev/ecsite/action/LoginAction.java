@@ -23,6 +23,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		loginDTO = loginDAO.getLoginUserInfo(userName, password);
 
 		session.put("loginUser", loginDTO);
+		session.put("userName" ,loginDTO.getUserName());//ちょくちょく使う値は別でsessionにいれる？
+
 
 		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;

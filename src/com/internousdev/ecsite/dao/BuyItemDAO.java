@@ -14,17 +14,17 @@ public class BuyItemDAO {
 
 		private DateUtil dateUtil = new DateUtil();
 
-		private String sql = "INSERT INTO _buy_item_info (user_name, item_name, total_price, total_count, pay, insert_date) VALUES(?, ?, ?, ?, ?, ?)";
+		private String sql = "INSERT INTO buy_item_info (user_name, item_name, total_price, count, pay, insert_date) VALUES(?, ?, ?, ?, ?, ?)";
 
 
-		public void buyItemInfo(String userName, String itemName, String total_price, String total_count, String pay) throws SQLException {
+		public void buyItemInfo(String userName, String itemName, String total_price, String count, String pay) throws SQLException {
 
 			try {
 				PreparedStatement preparedStatement = connection.prepareStatement(sql);
 				preparedStatement.setString(1, userName);
 				preparedStatement.setString(1, itemName);
 				preparedStatement.setString(2, total_price);
-				preparedStatement.setString(3, total_count);
+				preparedStatement.setString(3, count);
 				preparedStatement.setString(5, pay);
 				preparedStatement.setString(6, dateUtil.getDate());
 

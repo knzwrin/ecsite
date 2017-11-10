@@ -14,7 +14,7 @@
 <s:submit value="ログイン"/>
 </s:form>
 
-<s:form action="CreateUserAction">
+<s:form action="GoCreateUserAction">
 <s:submit value="新しくアカウントをつくる"/>
 </s:form>
 </body>
