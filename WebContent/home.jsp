@@ -45,6 +45,11 @@
 	    width: 150px;
 	}
 
+	h2{
+	text-align: center;
+	border-bottom: 5px solid black;
+	}
+
 	.wordSearch{
 		width:100%;
 		margin-top: 50px;
@@ -75,6 +80,17 @@
     	width: 200px;
     	heigit: 200px;
 	}
+
+	.footer{
+	position: fixed;
+	bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+}
 	</style>
 <title>home</title>
 </head>
@@ -82,12 +98,13 @@
         <div class="header">
             <nav class="menu">
                 <ul>
-                    <li><a href="">ECSITE</a></li>
-                    <li><a href="">ログイン</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href="#">ECSITE</a></li>
+                    <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
+                    <li><a href="#">マイページ</a></li>
                 </ul>
             </nav>
         </div>
+        <h2>ワード検索</h2>
 	<div class="wordSearch">
 		<s:form action="WordSearchAction">
 		<s:textfield name="searchWord" label="検索欄"/>
@@ -102,7 +119,7 @@
         <div class="category1"><img src="img/note.jpg"><br>文房具</div>
         <div class="category1"><img src="img/refrigerator.jpg"><br>家電製品</div>
 	</div> -->
-
+	<h2>カテゴリー検索</h2>
 	<div class="categorybox">
 	<s:form action="CategorySearchAction">
 		<div class="category1"><input type="hidden" name="categoryId" value="1"><s:submit value="文房具"/></div>
@@ -121,6 +138,6 @@
     </s:form>
 	</div>
 
-
+        <div class="footer">footer</div>
 </body>
 </html>

@@ -11,6 +11,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware{
 	private String userName;
 	private String password;
+	private String errorMessage;
+	private String flg;
 	public Map<String, Object> session;
 	private LoginDAO loginDAO = new LoginDAO();
 	private LoginDTO loginDTO = new LoginDTO();
@@ -45,10 +47,16 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 
 		if(loginDTO.getLoginFlg()) {
+			if(flg.equals("home")){
+				result = "home";
+				return result;
+			}
 			result = SUCCESS;
 			return result;
 		}
 
+		setErrorMessage("ログインに失敗しました");
+		System.out.println(getErrorMessage());
 		return result;
 	}
 
@@ -68,8 +76,26 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		this.password = password;
 	}
 
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+
+	public String getFlg() {
+		return flg;
+	}
+
+	public void setFlg(String flg) {
+		this.flg = flg;
 	}
 }

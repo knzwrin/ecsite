@@ -46,8 +46,13 @@
 
 
 <!-- /////////////////////////////ログイン機能////////////////////////////////// -->
+<action name="GoLoginAction" class="com.internousdev.ecsite.action.GoLoginAction" method="execute">
+<result name="success">home.jsp</result>
+<result name="login">login.jsp</result>
+</action>
 <action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction" method="execute">
 <result name="success">buyItemConfirm.jsp</result>
+<result name="home">home.jsp</result>
 <result name="error">login.jsp</result>
 </action>
 

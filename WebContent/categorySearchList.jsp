@@ -11,6 +11,41 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<style type="text/css">
+		.header{
+   		 background-color: black;
+	}
+
+	.menu ul{
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+	}
+
+	.menu li a{
+	    display: block;
+	    padding: 15px;
+	    color: white;
+	    font-size: 14px;
+	    text-decoration: none;
+		text-align:center;
+	}
+
+	.menu li a:hover{
+	    background-color: lightgrey;
+	}
+
+	.menu ul:after{
+	    content: "";
+	    display: block;
+	    clear: both;
+	}
+
+	.menu li{
+	    float: left;
+	    width: 150px;
+	}
+
+
 	.listbox{
 		width:100%;
 		margin-top: 50px;
@@ -26,19 +61,33 @@
 	height: 200px;
 	}
 
-	.box{
-	width: 25%;
+	.footer{
+		position: fixed;
+		bottom: 0px;
+	    width: 100%;
+	    height: 50px;
+	    background-color: black;
+	    color: white;
+	    line-height: 50px;
+	    text-align: center;
 	}
 	</style>
 <title>検索結果</title>
 </head>
 <body>
-<body>
+        <div class="header">
+            <nav class="menu">
+                <ul>
+                    <li><a href="">ECSITE</a></li>
+                    <li><a href="">ログイン</a></li>
+                    <li><a href="">マイページ</a></li>
+                </ul>
+            </nav>
+        </div>
 	<div class="listbox">
 
 		<s:iterator value="searchDTO">
 		<s:form action="ItemDetailSearchAction">
-		<div class="box">
 			<table>
 				<tr>
 					<td>
@@ -58,10 +107,10 @@
 					</td>
 				</tr>
 			</table>
-	</div>
 		</s:form>
 		</s:iterator>
 
+        <div class="footer">footer</div>
 	</div>
 </body>
 </html>
