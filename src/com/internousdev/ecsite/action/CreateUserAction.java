@@ -4,32 +4,38 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ecsite.dto.UserCreateDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CreateUserAction extends ActionSupport implements SessionAware{
 //	private String userId;
 	private String userName;
 	private String password;
+	private String postalCode;
 	private String address;
 	private String tell;
 	private String email;
 	public Map<String,Object> session;
 	private String errorMassage;
+	private UserCreateDTO userCreateDTO = new UserCreateDTO();
 
 	public String execute(){
-		String result = SUCCESS;
-
+		String result = ERROR;
+		System.out.println(userName);
+		System.out.println(password);
 		if(!(userName.equals("")) && !(password.equals("")) && !(address.equals("")) && !(tell.equals("")) && !(email.equals(""))){
 			if(userName.length() >= 6 && userName.length() <= 8 && password.length() >=8 && password.length() <= 16){
-			session.put("username", userName);//6以上10以下
-			session.put("password", password);//8以上16以下
-			session.put("address", address);
-			session.put("tell", tell);
-			session.put("email", email);
+			userCreateDTO.setUserName(userName);//6以上10以下
+			userCreateDTO.setPassword(password);//8以上16以下
+			userCreateDTO.setPostalCode(postalCode);
+			userCreateDTO.setAddress(address);
+			userCreateDTO.setTell(tell);///////////////////////dtoにぶち込む
+			userCreateDTO.setEmail(email);
+			result = SUCCESS;
+			return result;
 			}
 		}else{
-			setErrorMassage("正しく入力してください。");
-			result = ERROR;
+			setErrorMassage("正しく入力してください!!!!!!");
 		}
 		return result;
 	}
@@ -56,6 +62,14 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
 	public String getAddress() {
@@ -93,6 +107,14 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 
 	public void setErrorMassage(String errorMassage) {
 		this.errorMassage = errorMassage;
+	}
+
+	public UserCreateDTO getUserCreateDTO() {
+		return userCreateDTO;
+	}
+
+	public void setUserCreateDTO(UserCreateDTO userCreateDTO) {
+		this.userCreateDTO = userCreateDTO;
 	}
 
 }

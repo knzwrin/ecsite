@@ -20,17 +20,25 @@
   		height: 100%;
   		text-align: center;
 	}
+
 	img{
 	width: 200px;
 	height: 200px;
+	}
+
+	.box{
+	width: 25%;
 	}
 	</style>
 <title>検索結果</title>
 </head>
 <body>
+<body>
 	<div class="listbox">
-	<s:form action="ItemDetailSearchAction">
+
 		<s:iterator value="searchDTO">
+		<s:form action="ItemDetailSearchAction">
+		<div class="box">
 			<table>
 				<tr>
 					<td>
@@ -50,8 +58,10 @@
 					</td>
 				</tr>
 			</table>
+	</div>
+		</s:form>
 		</s:iterator>
-	</s:form>
+
 	</div>
 </body>
 </html>

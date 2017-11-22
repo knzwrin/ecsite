@@ -11,6 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CreateUserComplateAction extends ActionSupport implements SessionAware{
 	private String userName;
 	private String password;
+	private String postalCode;
 	private String address;
 	private String tell;
 	private String email;
@@ -19,13 +20,7 @@ public class CreateUserComplateAction extends ActionSupport implements SessionAw
 
 	public String execute() throws SQLException{
 
-		createUserDAO.createUser(
-				session.get("username").toString(),
-				session.get("password").toString(),
-				session.get("address").toString(),
-				session.get("tell").toString(),
-				session.get("email").toString()
-				);
+		createUserDAO.createUser(userName, password, postalCode, address, tell, email);
 
 		return SUCCESS;
 	}
@@ -49,6 +44,14 @@ public class CreateUserComplateAction extends ActionSupport implements SessionAw
 		this.password = password;
 	}
 
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
 
 
 	public String getAddress() {
@@ -82,5 +85,6 @@ public class CreateUserComplateAction extends ActionSupport implements SessionAw
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 
 }

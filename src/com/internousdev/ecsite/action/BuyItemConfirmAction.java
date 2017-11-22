@@ -9,7 +9,8 @@ import com.internousdev.ecsite.dao.BuyItemDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemConfirmAction extends ActionSupport implements SessionAware{///要検討
-
+//	private ItemDetailSearchDTO itemDetailSearchDTO = new ItemDetailSearchDTO();
+//	private BuyItemDTO buyItemDTO = new BuyItemDTO();
 	public Map<String,Object> session;
 
 	private BuyItemDAO buyItemDAO = new BuyItemDAO();
@@ -20,11 +21,12 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	 * @author internous
 	 */
 	public String execute() throws SQLException {
-
+		System.out.println(session.size());
 		buyItemDAO.buyItemInfo(
+				session.get("userId").toString(),
 				session.get("userName").toString(),
 				session.get("itemName").toString(),
-				session.get("total_price").toString(),
+				session.get("totalPrice").toString(),
 				session.get("count").toString(),
 				session.get("pay").toString()
 				);

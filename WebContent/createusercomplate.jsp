@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>ユーザー登録完了画面</title>
 </head>
 <body>
-
+ユーザー登録を完了しました！
+ログインして商品購入を続ける。
 </body>
 </html>

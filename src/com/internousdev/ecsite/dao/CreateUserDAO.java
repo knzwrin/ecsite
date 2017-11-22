@@ -14,18 +14,19 @@ public class CreateUserDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "INSERT INTO user_info (user_name, password, address, tell, email, insert_date) VALUES(?, ?, ?, ?, ?, ?)";
+	private String sql = "INSERT INTO user_info (user_name, password, postal_code, address, tell, email, insert_date) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
-	public void createUser(String userName, String password, String address, String tell, String email) throws SQLException {
+	public void createUser(String userName, String password, String postalCode, String address, String tell, String email) throws SQLException {
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, userName);
 			preparedStatement.setString(2, password);
-			preparedStatement.setString(3, address);
-			preparedStatement.setString(4, tell);
-			preparedStatement.setString(5, email);
-			preparedStatement.setString(6, dateUtil.getDate());
+			preparedStatement.setString(3, postalCode);
+			preparedStatement.setString(4, address);
+			preparedStatement.setString(5, tell);
+			preparedStatement.setString(6, email);
+			preparedStatement.setString(7, dateUtil.getDate());
 
 			preparedStatement.execute();
 

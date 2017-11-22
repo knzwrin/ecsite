@@ -5,22 +5,21 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite.dao.CartDeleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemComplateAction extends ActionSupport implements SessionAware{
-	private CartDeleteDAO cartDeleteDAO = new CartDeleteDAO();
+//	private CartDeleteDAO cartDeleteDAO = new CartDeleteDAO();
 	public Map<String,Object> session;
 
 	public String execute() throws SQLException {
 
 		String result = SUCCESS;
-
-		/*購入したカート情報削除*/
-		cartDeleteDAO.cartInfoDelete(
-				session.get("itemId").toString(),
-				session.get("userName").toString()
-				);
+//
+//		/*購入したカート情報削除*/
+//		cartDeleteDAO.cartInfoDelete(
+//				session.get("itemId").toString(),
+//				session.get("userName").toString()
+//				);
 
 		return result;
 	}

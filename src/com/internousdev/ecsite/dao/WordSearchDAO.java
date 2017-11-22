@@ -24,18 +24,18 @@ public class WordSearchDAO {
 
 
 		String tempsql = "SELECT * FROM item_info where ";
-		System.out.println(tempsql);
 		String sql = "" ;
 		int i =0;
 		while(i<wordList.length){
 
-			sql = sql + "item_word like \"%"+wordList[i]+"%\"";
+			sql = sql + "category_word like \"%"+wordList[i]+"%\"";
 					if((i+1)<wordList.length){
 						sql = sql + " or ";
 					}
 					i++;
 		}
 		String mainsql = tempsql + sql +";";
+		System.out.println(mainsql);
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(mainsql);
 

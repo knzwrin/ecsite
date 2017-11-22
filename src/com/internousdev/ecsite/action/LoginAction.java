@@ -15,6 +15,23 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private LoginDAO loginDAO = new LoginDAO();
 	private LoginDTO loginDTO = new LoginDTO();
 
+//	public String execute() {
+//
+//		String result = ERROR;
+//
+//		loginDTO = loginDAO.getLoginUserInfo(userName, password);
+//
+//		session.put("loginUser", loginDTO);
+//		session.put("userName" ,loginDTO.getUserName());//ちょくちょく使う値は別でsessionにいれる？
+//
+//
+//		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
+//			result = SUCCESS;
+//			return result;
+//		}
+//
+//		return result;
+//	}
 
 	public String execute() {
 
@@ -22,11 +39,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		loginDTO = loginDAO.getLoginUserInfo(userName, password);
 
-		session.put("loginUser", loginDTO);
-		session.put("userName" ,loginDTO.getUserName());//ちょくちょく使う値は別でsessionにいれる？
+//		session.put("loginUser", loginDTO);
+		session.put("userId",loginDTO.getUserId());
+		session.put("userName" ,loginDTO.getUserName());
 
 
-		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
+		if(loginDTO.getLoginFlg()) {
 			result = SUCCESS;
 			return result;
 		}

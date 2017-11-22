@@ -29,14 +29,15 @@ public class LoginDAO {
 				loginDTO.setUserId(resultSet.getString("user_id"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
 				loginDTO.setPassword(resultSet.getString("Password"));
+				loginDTO.setPostalCode(resultSet.getString("postal_code"));
 				loginDTO.setAddress(resultSet.getString("address"));
 				loginDTO.setTell(resultSet.getString("tell"));
 				loginDTO.setEmail(resultSet.getString("email"));
+
 				if(!(resultSet.getString("user_name").equals(null))) {
 					loginDTO.setLoginFlg(true);
 				}
 			}
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

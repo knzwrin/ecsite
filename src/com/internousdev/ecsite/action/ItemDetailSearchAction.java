@@ -17,15 +17,27 @@ public class ItemDetailSearchAction extends ActionSupport implements SessionAwar
 
 	public String execute(){
 		String result = SUCCESS;
+		System.out.println(itemId);
 		itemDetailSearchDTO = itemDetailSearchDAO.getItemDetailInfo(itemId);
 		session.put("itemId", itemDetailSearchDTO.getItemId());
 		session.put("itemName", itemDetailSearchDTO.getItemName());
 		session.put("itemPrice", itemDetailSearchDTO.getItemPrice());
 		session.put("itemImg", itemDetailSearchDTO.getItemImg());
-		session.put("category_id", itemDetailSearchDTO.getCategoryId());
-		session.put("category_word", itemDetailSearchDTO.getCategoryWord());
+		session.put("categoryId", itemDetailSearchDTO.getCategoryId());
+		session.put("itemDtail", itemDetailSearchDTO.getItemDtail());
+		session.put("categoryWord", itemDetailSearchDTO.getCategoryWord());
 		session.put("insert_date", itemDetailSearchDTO.getInsert_date());
+		System.out.println(itemDetailSearchDTO.getItemName());
 		return result;
+	}
+
+
+	public String getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
 
 	@Override

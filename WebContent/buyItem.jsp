@@ -4,47 +4,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<style type="text/css">
-	.iteminfo{
-		width:100%;
-		margin-top: 50px;
-		display: flex;
-  		justify-content: center;
-  		align-items: center;
-  		height: 100%;
-  		text-align: center;
-	}
-
-	img{
-		width: 300px;
-		height: 300px;
-	}
-	</style>
-<title>詳細情報</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-<div class="iteminfo">
-<s:form action="BuyItemAction">
+		<s:form action="BuyItemAction">
 			<table>
 				<tr>
 					<td>
-						<span>商品名:<s:property value="#session.itemName" /><br></span>
+						<span>商品名</span>
 					</td>
-				</tr>
-				<tr>
 					<td>
-					<img src ="<s:property value="#session.itemImg" />">
-					</td>
-				</tr>
-				<tr>
-					<td>
-					<span><s:property value="#session.itemDetail" /></span>
+						<s:property value="itemDetailSearchDTO.itemName" /><br>
 					</td>
 				</tr>
 				<tr>
@@ -52,7 +23,7 @@
 						<span>値段</span>
 					</td>
 					<td>
-						<s:property value="#session.itemPrice" /><span>円</span>
+						<s:property value="itemDetailSearchDTO.itemPrice" /><span>円</span>
 					</td>
 				</tr>
 				<tr>
@@ -80,15 +51,15 @@
 					<td>
 						<input type="radio" name="pay" value="1" checked="checked">現金払い
 						<input type="radio" name="pay" value="2">クレジットカード
-						<input type="radio" name="pay" value="3">コンビニ・郵便局受け取り
+						<input type="radio" name="pay" value="3">コンビ二・郵便局受け取り
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<s:submit value="購入" />
+					</td>
 				</tr>
 			</table>
-</s:form>
-</div>
+		</s:form>
 </body>
 </html>

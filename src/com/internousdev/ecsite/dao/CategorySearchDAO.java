@@ -15,7 +15,7 @@ public class CategorySearchDAO {
     private Connection connection = dbConnector.getConnection();
 
     public ArrayList<SearchDTO> getItemInfo(String categoryId) throws SQLException {
-
+    	System.out.println(categoryId);
     	ArrayList<SearchDTO> searchDTO = new ArrayList<SearchDTO>();
     	String sql = "select*from item_info where category_id = ?";
 
