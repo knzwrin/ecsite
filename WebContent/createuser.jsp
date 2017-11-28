@@ -11,6 +11,16 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<style type="text/css">
+	.header{
+		width: 100%;
+		height: 70px;
+   		background-color: black;
+   		line-height: 70px;
+   		text-align: center;
+   		font-size: 30px;
+   		color: white;
+	}
+
 	.test{
 		text-align: center;
 		border-bottom: 5px solid black;
@@ -41,6 +51,9 @@
 <title>ユーザー登録画面</title>
 </head>
 <body>
+<div class="header">
+ユーザー登録ページ
+</div>
 <h3>お客様の情報を登録します。</h3>
 <s:if test="errorMassage!=null">
 <h4>*<s:property value="errorMassage"/>*</h4>

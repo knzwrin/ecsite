@@ -50,6 +50,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			if(flg.equals("home")){
 				result = "home";
 				return result;
+			}else if(flg.equals("mypage")){
+				result = "mypage";
+				return result;
 			}
 			result = SUCCESS;
 			return result;

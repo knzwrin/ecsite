@@ -63,7 +63,7 @@
             <nav class="menu">
                 <ul>
                     <li><a href="">ECSITE</a></li>
-                    <li><a href="">ログイン</a></li>
+                    <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
                     <li><a href="">マイページ</a></li>
                 </ul>
             </nav>

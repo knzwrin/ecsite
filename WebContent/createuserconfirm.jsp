@@ -11,6 +11,21 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<style type="text/css">
+		.header{
+		width: 100%;
+		height: 70px;
+   		background-color: black;
+   		line-height: 70px;
+   		text-align: center;
+   		font-size: 30px;
+   		color: white;
+	}
+
+
+		p{
+		text-align: center;
+		}
+
 		table.list {
 			border-collapse: collapse;
 			text-align: left;
@@ -46,6 +61,10 @@
 <title>確認画面</title>
 </head>
 <body>
+<div class="header">
+ユーザー登録ページ
+</div>
+
 <div class="confirmbox">
 <p>以下の内容で登録します</p>
 <table class="list">

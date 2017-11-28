@@ -16,7 +16,7 @@ public class GoMyPageAction extends ActionSupport implements SessionAware{
 			String result = SUCCESS;
 			return result;
 		}
-		flg = "home";
+		flg = "mypage";
 		String result = "login";
 		return result;
 	}

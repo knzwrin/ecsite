@@ -4,13 +4,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<style type="text/css">
+		.header{
+		width: 100%;
+		height: 70px;
+		background-color: black;
+		line-height: 70px;
+		text-align: center;
+		font-size: 30px;
+		color: white;
+	}
+
+	.main{
+    	width:100%;
+		display: flex;
+    	justify-content: center;
+    	align-items: center;
+    }
+	</style>
 <title>マイページ</title>
 </head>
 <body>
-<h3>マイページ</h3>
+<div class="header">
+マイページ
+</div>
 <p>購入履歴</p>
-		<div>
+<div>
 		<s:if test="myPageList == null">
 			<h3>ご購入情報はありません。</h3>
 		</s:if>
