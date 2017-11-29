@@ -57,6 +57,13 @@
 			border-right: 1px solid #ccc;
 			border-bottom: 1px solid #ccc;
 		}
+
+		 .confirmbox{
+    		width:100%;
+		display: flex;
+  		justify-content: center;
+  		align-items: center;
+    }
 	</style>
 <title>確認画面</title>
 </head>
@@ -65,8 +72,9 @@
 ユーザー登録ページ
 </div>
 
-<div class="confirmbox">
+
 <p>以下の内容で登録します</p>
+<div class="confirmbox">
 <table class="list">
 	<thead>
 	<tr>
@@ -99,10 +107,25 @@
 		<th>メールアドレス</th>
 		<td><s:property value="email"/></td>
 	</tr>
+		<tr>
+		<th>確認</th>
+			<td>
+				<s:form action="CreateUserComplateAction">
+				<input type="hidden" name="userName" value='<s:property value="userName"/>'/>
+				<input type="hidden" name="password" value='<s:property value="password"/>'/>
+				<input type="hidden" name="postalCode" value='<s:property value="postalCode"/>'/>
+				<input type="hidden" name="address" value='<s:property value="address"/>'/>
+				<input type="hidden" name="tell" value='<s:property value="tell"/>'/>
+				<input type="hidden" name="email" value='<s:property value="email"/>'/>
+				<s:submit value="確認"/>
+			</s:form>
+			</td>
+		</tr>
 	</tbody>
 </table>
+</div>
 <p>よろしければ確認を押してください</p>
-<s:form action="CreateUserComplateAction">
+<%-- <s:form action="CreateUserComplateAction">
 <input type="hidden" name="userName" value='<s:property value="userName"/>'/>
 <input type="hidden" name="password" value='<s:property value="password"/>'/>
 <input type="hidden" name="postalCode" value='<s:property value="postalCode"/>'/>
@@ -110,7 +133,6 @@
 <input type="hidden" name="tell" value='<s:property value="tell"/>'/>
 <input type="hidden" name="email" value='<s:property value="email"/>'/>
 <s:submit value="確認"/>
-</s:form>
-</div>
+</s:form> --%>
 </body>
 </html>

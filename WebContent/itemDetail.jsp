@@ -45,21 +45,35 @@
 	    width: 150px;
 	}
 	.iteminfo{
+		float: left;
 		width:100%;
 		margin-top: 50px;
-		display: flex;
+/* 		display: flex;
   		justify-content: center;
-  		align-items: center;
-  		height: 100%;
-  		text-align: center;
+   		align-items: center;
+   		height: 100%;
+  		text-align: center;  */
 	}
 
+	.image{
+	float: left;
+	margin-left: 300px;
+	width: 30%;
+	}
+	.main{
+	float: left;
+	width: 70%;
+	text-align: center;
+	}
+
+
 	img{
-		width: 300px;
-		height: 300px;
+		width: 400px;
+		height: 400px;
 	}
 
 		.footer{
+		clea: both;
 		position: fixed;
 		bottom: 0px;
 	    width: 100%;
@@ -82,24 +96,29 @@
                 </ul>
             </nav>
         </div>
+
 <div class="iteminfo">
 <s:form action="BuyItemAction">
+<div class="image"><img src ="<s:property value="#session.itemImg" />"></div>
+<div class="main">
 			<table>
 				<tr>
 					<td>
-						<span>商品名:<s:property value="#session.itemName" /><br></span>
+						<span>商品名:<s:property value="#session.itemName" /></span>
 					</td>
 				</tr>
-				<tr>
+<%-- 				<tr>
 					<td>
 					<img src ="<s:property value="#session.itemImg" />">
 					</td>
-				</tr>
+				</tr> --%>
 				<tr>
 					<td>
-					<span><s:property value="#session.itemDetail" /></span>
+					<span>商品説明:<s:property value="#session.itemDetail" /></span>
 					</td>
 				</tr>
+			</table>
+			<table>
 				<tr>
 					<td>
 						<span>値段</span>
@@ -139,8 +158,10 @@
 				<tr>
 					<td>
 						<s:submit value="購入" />
+					</td>
 				</tr>
 			</table>
+</div>
 </s:form>
 </div>
 

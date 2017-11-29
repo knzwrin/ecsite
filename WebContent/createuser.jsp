@@ -70,13 +70,13 @@
         <td class="item">パスワード</td><td><input size="50" type="password" name="password"/><br>＊8文字以上16文字以内</td>
     </tr>
      <tr>
-        <td class="item">郵便番号</td><td><input size="50" type="text" name="postalCode"/><br>例）120-0015</td>
+        <td class="item">郵便番号</td><td><input size="50" type="text" name="postalCode"/><br>*半角数字　例）120-0015</td>
     </tr>
     <tr>
         <td class="item">住所</td><td><input size="50" type="text" name="address"/><br>例）東京都新宿区○-○-○<br>（あればアパートまたはマンション名を続けてお入れください）</td>
     </tr>
     <tr>
-        <td class="item">電話番号</td><td><input size="50" type="text" name="tell"/><br>例）000-0000-0000</td>
+        <td class="item">電話番号</td><td><input size="50" type="text" name="tell"/><br>*半角数字　例）000-0000-0000</td>
     </tr>
     <tr>
         <td class="item">メールアドレス</td><td><input size="50" type="text" name="email"/><br>例）sample@softbank.ne.jp</td>

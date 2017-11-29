@@ -100,7 +100,7 @@
                 <ul>
                     <li><a href="#">ECSITE</a></li>
                     <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
-                    <li><a href="#">マイページ</a></li>
+                    <li><a href='<s:url action="GoMyPageAction" />'>マイページ</a></li>
                 </ul>
             </nav>
         </div>
@@ -111,16 +111,16 @@
 		<s:submit value="検索"/>
 		</s:form>
 	</div>
-<!-- <input type="hidden" name="categoryId" value="1"> -->
-<!-- 	<div class="categorybox">
-		<div class="category1"><img src="img/sneakers.jpg"><br>服</div>
-        <div class="category1"><img src="img/table.jpg"><br>家具</div>
-        <div class="category1"><img src="img/apple.jpg"><br>食品</div>
-        <div class="category1"><img src="img/note.jpg"><br>文房具</div>
-        <div class="category1"><img src="img/refrigerator.jpg"><br>家電製品</div>
-	</div> -->
-	<h2>カテゴリー検索</h2>
-	<div class="categorybox">
+		<h2>カテゴリー検索</h2>
+		 <div class="categorybox">
+			<div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="1"/></s:url>'><img src="img/note.jpg"><br>文房具</a></div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="2"/></s:url>'><img src="img/table.jpg"><br>家具</a></div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="3"/></s:url>'><img src="img/apple.jpg"><br>食品</a></div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="4"/></s:url>'><img src="img/T-shirt.jpg"><br>服</a></div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="5"/></s:url>'><img src="img/refrigerator.jpg"><br>家電製品</a></div>
+		</div>
+
+<%-- 	<div class="categorybox">
 	<s:form action="CategorySearchAction">
 		<div class="category1"><input type="hidden" name="categoryId" value="1"><s:submit value="文房具"/></div>
 	</s:form>
@@ -136,7 +136,7 @@
     <s:form action="CategorySearchAction">
         <div class="category1"><input type="hidden" name="categoryId" value="5"><s:submit value="家電製品"/></div>
     </s:form>
-	</div>
+	</div> --%>
 
         <div class="footer">footer</div>
 </body>

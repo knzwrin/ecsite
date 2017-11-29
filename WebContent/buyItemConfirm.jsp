@@ -44,6 +44,16 @@
 	    float: left;
 	    width: 150px;
 	}
+	p{
+	text-align: center;
+	}
+
+	table{
+	    width:100%;
+		display: flex;
+  		justify-content: center;
+  		align-items: center;
+	}
 
 		.footer{
 		position: fixed;
@@ -71,6 +81,7 @@
 
 <p>以下の内容で購入します</p>
 			<s:form action="BuyItemConfirmAction">
+			<table>
 				<tr>
 					<td>商品名</td>
 					<td><s:property value="#session.itemName" /></td>
@@ -95,6 +106,7 @@
 					<s:submit value="購入完了"/><br>
 					</td>
 				</tr>
+			</table>
 			</s:form>
 
 			        <div class="footer">footer</div>

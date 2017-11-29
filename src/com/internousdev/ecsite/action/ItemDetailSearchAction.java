@@ -24,7 +24,7 @@ public class ItemDetailSearchAction extends ActionSupport implements SessionAwar
 		session.put("itemPrice", itemDetailSearchDTO.getItemPrice());
 		session.put("itemImg", itemDetailSearchDTO.getItemImg());
 		session.put("categoryId", itemDetailSearchDTO.getCategoryId());
-		session.put("itemDtail", itemDetailSearchDTO.getItemDtail());
+		session.put("itemDetail", itemDetailSearchDTO.getItemDtail());
 		session.put("categoryWord", itemDetailSearchDTO.getCategoryWord());
 		session.put("insert_date", itemDetailSearchDTO.getInsert_date());
 		System.out.println(itemDetailSearchDTO.getItemName());
