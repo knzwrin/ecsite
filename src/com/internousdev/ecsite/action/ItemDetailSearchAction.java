@@ -11,12 +11,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ItemDetailSearchAction extends ActionSupport implements SessionAware{
 
 	private String itemId;
+/*	private String searchFlg;*/
 	public Map<String, Object> session;
 	private ItemDetailSearchDAO itemDetailSearchDAO = new ItemDetailSearchDAO();
 	private ItemDetailSearchDTO itemDetailSearchDTO = new ItemDetailSearchDTO();
 
 	public String execute(){
 		String result = SUCCESS;
+
+
 		System.out.println(itemId);
 		itemDetailSearchDTO = itemDetailSearchDAO.getItemDetailInfo(itemId);
 		session.put("itemId", itemDetailSearchDTO.getItemId());
@@ -28,6 +31,7 @@ public class ItemDetailSearchAction extends ActionSupport implements SessionAwar
 		session.put("categoryWord", itemDetailSearchDTO.getCategoryWord());
 		session.put("insert_date", itemDetailSearchDTO.getInsert_date());
 		System.out.println(itemDetailSearchDTO.getItemName());
+
 		return result;
 	}
 

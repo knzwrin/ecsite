@@ -21,15 +21,12 @@
 <result name="error">searchError.jsp</result>
 </action>
 
-<action name="BackWordSearchAction" class="com.internousdev.ecsite.action.WordSearchAction" method="execute">
-<result name="success">home.jsp</result>
-</action>
-
 <action name="CategorySearchAction" class="com.internousdev.ecsite.action.CategorySearchAction" method="execute">
 <result name="success">categorySearchList.jsp</result>
+<result name="error">home.jsp</result>
 </action>
 
-<action name="BackCategorySearchAction" class="com.internousdev.ecsite.action.BackCategorySearchAction" method="execute">
+<action name="BackAction" class="com.internousdev.ecsite.action.BackAction" method="execute">
 <result name="success">home.jsp</result>
 </action>
 
@@ -38,9 +35,9 @@
 <result name="error">searchError.jsp</result>
 </action>
 
-<action name="BackItemDetailSearchAction" class="com.internousdev.ecsite.action.ItemDetailSearchAction" method="execute">
-<result name="Word">wordSearchList.jsp</result>
-<result name="Category">CategorySearchList.jsp</result>
+<action name="BackItemDetailSearchAction" class="com.internousdev.ecsite.action.BackItemDetailSearchAction" method="execute">
+<result name="word" type="chain">WordSearchAction</result>
+<result name="category" type="chain">CategorySearchAction</result>
 <result name="error">home.jsp</result>
 </action>
 

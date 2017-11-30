@@ -19,9 +19,18 @@ public class WordSearchAction extends ActionSupport implements SessionAware{
 
 	public String execute() throws SQLException{
 		String result = SUCCESS;
-		System.out.println(searchWord);
 
+		
+//		はじめて来たときに空白か確認。戻ってきたときは
+		if(!(session.containsKey("searchWord"))){
+			if(searchWord.equals("")){
+				return ERROR;
+			}
+		}
+
+		if(!(session.containsKey("searchWord"))){
 		session.put("searchWord", searchWord);
+		}
 
 		searchDTO = wordSearchDAO.getItemInfo(session.get("searchWord").toString());
 
@@ -45,16 +54,11 @@ public class WordSearchAction extends ActionSupport implements SessionAware{
 		this.session = session;
 	}
 
-	/**
-	 * @return searchDTO
-	 */
+
 	public ArrayList<SearchDTO> getSearchDTO() {
 		return searchDTO;
 	}
 
-	/**
-	 * @param searchDTO セットする searchDTO
-	 */
 	public void setSearchDTO(ArrayList<SearchDTO> searchDTO) {
 		this.searchDTO = searchDTO;
 	}

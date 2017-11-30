@@ -74,6 +74,7 @@
     	margin-top:20px;
     	width: 20%;
     	text-align: center;
+    	color: white;
 	}
 
 	img{
@@ -113,11 +114,11 @@
 	</div>
 		<h2>カテゴリー検索</h2>
 		 <div class="categorybox">
-			<div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="1"/></s:url>'><img src="img/note.jpg"><br>文房具</a></div>
-	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="2"/></s:url>'><img src="img/table.jpg"><br>家具</a></div>
-	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="3"/></s:url>'><img src="img/apple.jpg"><br>食品</a></div>
-	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="4"/></s:url>'><img src="img/T-shirt.jpg"><br>服</a></div>
-	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="5"/></s:url>'><img src="img/refrigerator.jpg"><br>家電製品</a></div>
+			<div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="1"/></s:url>'><img src="img/note.jpg"><br></a>文房具</div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="2"/></s:url>'><img src="img/table.jpg"><br></a>家具</div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="3"/></s:url>'><img src="img/apple.jpg"><br></a>食品</div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="4"/></s:url>'><img src="img/T-shirt.jpg"><br></a>服</div>
+	        <div class="category1"><a href='<s:url action="CategorySearchAction" ><s:param name="categoryId" value="5"/></s:url>'><img src="img/refrigerator.jpg"><br></a>家電製品</div>
 		</div>
 
 <%-- 	<div class="categorybox">

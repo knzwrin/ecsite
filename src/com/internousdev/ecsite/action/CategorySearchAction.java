@@ -18,9 +18,20 @@ public class CategorySearchAction extends ActionSupport implements SessionAware{
 	private ArrayList<SearchDTO> searchDTO = new ArrayList<SearchDTO>();
 
 	public String execute() throws SQLException{
-		System.out.println(categoryId);
+		System.out.println("kitayo");
 		String result = SUCCESS;
+
+		if(!(session.containsKey("categoryId"))){
 		session.put("categoryId", categoryId);
+		}else{
+			searchDTO = categorySearchDAO.getItemInfo(session.get("categoryId").toString());
+			Iterator<SearchDTO> iterator = searchDTO.iterator();
+			if (iterator.hasNext()) {
+				result = SUCCESS;
+				return result;
+			}
+		}
+
 		searchDTO = categorySearchDAO.getItemInfo(categoryId);
 		Iterator<SearchDTO> iterator = searchDTO.iterator();
 		if (!(iterator.hasNext())) {

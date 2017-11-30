@@ -56,15 +56,15 @@
 	    text-align: center;
 	}
 	</style>
-<title>Insert title here</title>
+<title>商品購入</title>
 </head>
 <body>
         <div class="header">
             <nav class="menu">
                 <ul>
-                    <li><a href="">ECSITE</a></li>
+                    <li><a href='<s:url action="GoHomeAction" />'>ECSITE</a></li>
                     <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href='<s:url action="GoMyPageAction" />'>マイページ</a></li>
                 </ul>
             </nav>
         </div>

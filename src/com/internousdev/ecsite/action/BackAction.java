@@ -6,25 +6,22 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class GoHomeAction extends ActionSupport implements SessionAware{
-	public Map<String, Object> session;
-	public String execute() {
-
+public class BackAction extends ActionSupport implements SessionAware{
+		public Map<String,Object> session;
+		public String execute(){
 
 		if(session.containsKey("categoryId")){
 			System.out.println("削除");
 				session.remove("categoryId");
+				System.out.println(session.get("categoryId").toString());
 			}
 		if(session.containsKey("searchWord")){
 			session.remove("searchWord");
 			}
-
-
-		return SUCCESS;
-	}
-
-	@Override
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
+			return SUCCESS;
+		}
+		@Override
+		public void setSession(Map<String, Object> session) {
+			this.session = session;
+		}
 }

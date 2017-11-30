@@ -90,16 +90,19 @@
         <div class="header">
             <nav class="menu">
                 <ul>
-                    <li><a href="">ECSITE</a></li>
+                    <li><a href='<s:url action="GoHomeAction" />'>ECSITE</a></li>
                     <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href='<s:url action="GoMyPageAction" />'>マイページ</a></li>
                 </ul>
             </nav>
         </div>
 
 <div class="iteminfo">
 <s:form action="BuyItemAction">
-<div class="image"><img src ="<s:property value="#session.itemImg" />"></div>
+<div class="image">
+	<img src ="<s:property value="#session.itemImg" />">
+</div>
+
 <div class="main">
 			<table>
 				<tr>
@@ -165,6 +168,10 @@
 </s:form>
 </div>
 
-        <div class="footer">footer</div>
+
+	<p><a href='<s:url action="BackItemDetailSearchAction" />'>前へ戻る</a></p>
+
+
+ <div class="footer">footer</div>
 </body>
 </html>

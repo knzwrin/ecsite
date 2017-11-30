@@ -54,6 +54,11 @@
   		height: 100%;
   		text-align: center;
 	}
+
+	p{
+	text-align: center;
+	}
+
 	img{
 	width: 200px;
 	height: 200px;
@@ -76,16 +81,16 @@
         <div class="header">
             <nav class="menu">
                 <ul>
-                    <li><a href="">ECSITE</a></li>
+                    <li><a href='<s:url action="GoHomeAction" />'>ECSITE</a></li>
                     <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href='<s:url action="GoMyPageAction" />'>マイページ</a></li>
                 </ul>
             </nav>
         </div>
 
 	<div class="listbox">
-	<s:form action="ItemDetailSearchAction">
-		<s:iterator value="searchDTO">
+	<s:iterator value="searchDTO">
+		<s:form action="ItemDetailSearchAction">
 			<table>
 				<tr>
 					<td>
@@ -105,10 +110,11 @@
 					</td>
 				</tr>
 			</table>
-		</s:iterator>
-	</s:form>
+		</s:form>
+	</s:iterator>
 	</div>
 
+		<p><a href='<s:url action="BackAction" />'>前へ戻る</a></p>
 	        <div class="footer">footer</div>
 </body>
 </html>

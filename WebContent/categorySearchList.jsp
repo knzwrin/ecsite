@@ -56,6 +56,10 @@
   		text-align: center;
 	}
 
+	p{
+	text-align: center;
+	}
+
 	img{
 	width: 200px;
 	height: 200px;
@@ -78,9 +82,9 @@
         <div class="header">
             <nav class="menu">
                 <ul>
-                    <li><a href="">ECSITE</a></li>
-                    <li><a href="">ログイン</a></li>
-                    <li><a href="">マイページ</a></li>
+                    <li><a href='<s:url action="GoHomeAction" />'>ECSITE</a></li>
+                    <li><a href='<s:url action="GoLoginAction" />'>ログイン</a></li>
+                    <li><a href='<s:url action="GoMyPageAction" />'>マイページ</a></li>
                 </ul>
             </nav>
         </div>
@@ -103,14 +107,18 @@
 				<tr>
 					<td>
 						<input type="hidden" name="itemId" value='<s:property value="itemId" />'>
+  						<%-- <input type="hidden" name="searchDTO" value='<s:property value="searchDTO" />'> --%>
+  						<s:param name="searchDTO" value='1'/>
 						<s:submit value="購入" />
 					</td>
 				</tr>
 			</table>
 		</s:form>
 		</s:iterator>
+		</div>
+		<p><a href='<s:url action="BackAction" />'>前へ戻る</a></p>
 
         <div class="footer">footer</div>
-	</div>
+
 </body>
 </html>

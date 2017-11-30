@@ -45,6 +45,7 @@
 購入完了しました！！
 </div>
 		<div class="container">
+		<img src='<s:property value="#session.itemImg" />'>
 		<p><s:property value="#session.itemName" />を購入しました。<p><br>
 		<p><a href='<s:url action="GoHomeAction" />'>ショッピングを続ける</a></p>
 		<p><a href='<s:url action="MyPageAction" />'>購入履歴を確認する</a></p>

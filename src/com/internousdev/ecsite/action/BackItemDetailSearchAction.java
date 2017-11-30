@@ -11,11 +11,12 @@ public class BackItemDetailSearchAction  extends ActionSupport implements Sessio
 
 	public String execute(){
 		String result = ERROR;
-
+		System.out.println("BackItemDetailSearchAction");
 		if(session.containsKey("searchWord")){
 			result = "word";
 			return result;
 		}else if(session.containsKey("categoryId")){
+			System.out.println("カテゴリー");
 			result = "category";
 			return result;
 		}
