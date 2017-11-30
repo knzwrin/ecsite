@@ -13,7 +13,6 @@ public class BackAction extends ActionSupport implements SessionAware{
 		if(session.containsKey("categoryId")){
 			System.out.println("削除");
 				session.remove("categoryId");
-				System.out.println(session.get("categoryId").toString());
 			}
 		if(session.containsKey("searchWord")){
 			session.remove("searchWord");

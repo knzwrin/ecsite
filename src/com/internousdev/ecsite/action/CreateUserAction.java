@@ -19,7 +19,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 	private String tell;
 	private String email;
 	public Map<String,Object> session;
-	private String errorMassage;
+	private String errorMessage;
 	private UserCreateDTO userCreateDTO = new UserCreateDTO();
 
 	public String execute(){
@@ -45,25 +45,25 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 
 //		未記入がないか確認
 		if(userName.equals("") || password.equals("") || address.equals("") || tell.equals("") || email.equals("")){
-			setErrorMassage("未入力の箇所があります");
+			setErrorMessage("未入力の箇所があります");
 			result = ERROR;
 			return result;
 			}
 
 
 		if(!(userName.length() >= 6 && userName.length() <= 10)){
-			setErrorMassage("名前の記入が正しくありません。");
+			setErrorMessage("名前の記入が正しくありません。");
 			result = ERROR;
 			return result;
 			}
 
 		if(!(password.length() >= 8 && password.length() <= 16)){
-			setErrorMassage("パスワードの記入が正しくありません。");
+			setErrorMessage("パスワードの記入が正しくありません。");
 			result = ERROR;
 			return result;
 		}
 		if(!(password.equals(checkPassword))){
-			setErrorMassage("パスワードと確認パスワードが一致していません。");
+			setErrorMessage("パスワードと確認パスワードが一致していません。");
 		}
 
 //		郵便番号確認
@@ -71,7 +71,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 		Pattern pp = Pattern.compile(postalCodeRegex);
 		Matcher pm = pp.matcher(postalCode);
 		if(!(pm.find())){
-			setErrorMassage("郵便番号の記入が正しくありません。");
+			setErrorMessage("郵便番号の記入が正しくありません。");
 			result = ERROR;
 			return result;
 		}
@@ -85,8 +85,8 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 					addressCount++;
 			}
 		}
-		if(addressCount < 2){
-			setErrorMassage("住所の記入が正しくありません。");
+		if(addressCount != 2){
+			setErrorMessage("住所の記入が正しくありません。");
 			result = ERROR;
 			return result;
 		}
@@ -96,7 +96,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 		Pattern tp = Pattern.compile(tellRegex);
 		Matcher tm = tp.matcher(tell);
 		if(!(tm.find())){
-			setErrorMassage("電話番号の記入が正しくありません。");
+			setErrorMessage("電話番号の記入が正しくありません。");
 			result = ERROR;
 			return result;
 		}
@@ -110,7 +110,7 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 			}
 		}
 		if(emailCount == 0){
-			setErrorMassage("メールアドレスの記入が正しくありません。");
+			setErrorMessage("メールアドレスの記入が正しくありません。");
 			result = ERROR;
 			return result;
 		}
@@ -197,11 +197,11 @@ public class CreateUserAction extends ActionSupport implements SessionAware{
 	}
 
 	public String getErrorMassage() {
-		return errorMassage;
+		return errorMessage;
 	}
 
-	public void setErrorMassage(String errorMassage) {
-		this.errorMassage = errorMassage;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public UserCreateDTO getUserCreateDTO() {

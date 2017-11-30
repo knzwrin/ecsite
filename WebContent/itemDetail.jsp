@@ -60,12 +60,17 @@
 	margin-left: 300px;
 	width: 30%;
 	}
+
 	.main{
 	float: left;
 	width: 70%;
 	text-align: center;
+	background-color: lightgrey;
 	}
 
+	p{
+	text-align: center;
+	}
 
 	img{
 		width: 400px;
@@ -110,18 +115,11 @@
 						<span>商品名:<s:property value="#session.itemName" /></span>
 					</td>
 				</tr>
-<%-- 				<tr>
-					<td>
-					<img src ="<s:property value="#session.itemImg" />">
-					</td>
-				</tr> --%>
 				<tr>
 					<td>
 					<span>商品説明:<s:property value="#session.itemDetail" /></span>
 					</td>
 				</tr>
-			</table>
-			<table>
 				<tr>
 					<td>
 						<span>値段</span>

@@ -55,8 +55,9 @@
 ユーザー登録ページ
 </div>
 <h3>お客様の情報を登録します。</h3>
-<s:if test="errorMassage!=null">
-<h4>*<s:property value="errorMassage"/>*</h4>
+
+<s:if test="errorMessage!=null">
+<h4>*<s:property value="errorMessage"/>*</h4>
 </s:if>
 <s:form action="CreateUserAction">
 <table>

@@ -56,13 +56,15 @@
 <title>ログイン画面</title>
 </head>
 <body>
+
 <div class="header">
 ログイン認証ページ
 </div>
+
 <h2>こちらに入力をお願いします</h2>
 
 <s:if test="errorMessage!=null">
-<p>*<s:property value="errorMassage"/>*</p>
+<p>*<s:property value = "errorMessage"/>*</p>
 </s:if>
 
 <div class="roginbox">
